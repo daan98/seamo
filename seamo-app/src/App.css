@@ -1,0 +1,88 @@
+/** GLOBALS **/
+@import url(https://allfont.net/allfont.css?fonts=agency-fb-bold);
+
+.title{
+  font-family: 'Agency FB Bold', arial;
+}
+
+.purple{ color: #590178; }
+
+.blue{ color: #049DB5; }
+
+.yellow{ color: #FFEE00; }
+
+.App {
+  text-align: center;
+}
+
+/** COVER PAGE **/
+.enter {
+  background-image: url(./assets/videocamara.png);
+  background-size: cover;
+  background-position: center;  
+  height: 100vh;
+  text-align: center;
+}
+
+
+.background{
+  height: 100vh;
+  width: 100vw;
+  background-color: #590178;
+  opacity: calc(.5);
+}
+
+.initial-btn{
+  position: absolute;
+  z-index: 1;
+  left: 43%;
+  top: 43%;
+  border: 3px solid #FFEE00;
+  border-radius: 40px;
+  padding: 1% 4%;
+  text-decoration: none;
+  font-size: 32px;
+  transition: all ease-in-out .4s;
+}
+
+.initial-btn:hover{
+  color: #000000;
+  background-color: #049DB5;
+  border: 3px solid #049DB5;
+  transition: all ease-in-out .4s;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
