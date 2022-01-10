@@ -1,9 +1,25 @@
 import React from "react";
+import '../App.css';
+import { getNavbarLink } from './Data'
+import { NavLink } from "react-router-dom";
 
 function Header(){
     return(
         <div>
-            <h1>Header component</h1>
+            <nav>
+                {getNavbarLink.map(link => (
+                    <NavLink
+                     key={link.id}
+                     style={({isActive}) => {
+                         return{ color: isActive ? "#000000" : "", backgroundColor: isActive ? "#049DB5" : "", borderColor: isActive ? "#000000" : "#FFEE00", };
+                     }}
+                     className="btn"
+                     to={link.url}
+                    >
+                        {link.icon}
+                    </NavLink>
+                ))}
+            </nav>
         </div>
     );
 }

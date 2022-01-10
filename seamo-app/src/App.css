@@ -11,10 +11,6 @@
 
 .yellow{ color: #FFEE00; }
 
-.App {
-  text-align: center;
-}
-
 /** COVER PAGE **/
 .enter {
   background-image: url(./assets/videocamara.png);
@@ -52,37 +48,55 @@
   transition: all ease-in-out .4s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* HEADER */
+nav{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+}
+.btn{
+  border: 2px solid;
+  padding: 20px 0;
+  width: 100%;
+  font-family: 'Agency FB Bold', arial;
+  text-decoration: none;
+  text-align: center;
+  font-size: 25px;
+  transition: all ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+.btn:hover{
+  color: #000000;
+  background-color: #049DB5;
+  border: 2px solid #000000;
+  transition: all ease-in-out .4s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* FOOTER */
+footer{
+  padding: 20px 0;
+  background-color: #590178;
+  text-align: center;
+}
+
+footer a{
+  color: #FFEE00;
+  text-decoration: none;
+  font-size: 28px;
+  margin: 0 15px;
+  transition: all ease-in-out .4s;
+}
+
+footer a:first-of-type{ margin-left: 0; }
+
+footer a:last-of-type{ margin-right: 0; }
+
+footer a:hover {
+  color: #049DB5;
+  transition: all ease-in-out .4s;
+}
+
+footer p{
+  font-size: 10px;
+  font-weight: bold;
+  color: #FFEE00;
 }
