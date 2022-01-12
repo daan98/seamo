@@ -11,8 +11,12 @@ function Search(){
                 <h1 className="title yellow border" style={{width: "8.5%"}}>Genres</h1>
                 <div className="genre-container">
                     {getGenresImage.map(genre => (
-                        <div key={genres.id}>
+                        <div key={genre.id} className="genre-info">
                             <img src={genre.url} />
+                            <div>
+                                <p>{genre.genre}</p>
+                                <div className="show"></div>
+                            </div>
                         </div>
                     ))}
                 </div>

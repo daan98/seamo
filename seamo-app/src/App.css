@@ -18,7 +18,11 @@ h1.border{
 .background{
   height: 100vh;
   background-color: #590178;
-  opacity: calc(.75);
+  opacity: calc(.8);
+}
+
+img{
+  width: 100%;
 }
 
 /** COVER PAGE **/
@@ -114,4 +118,44 @@ footer p{
 .search-container {
   width: 80%;
   left: 10%;
+}
+
+.genre-container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.genre-info{
+  height: 200px;
+}
+
+.genre-info img{
+  height: 200px;
+}
+
+.genre-info div{
+  position: relative;
+  display: grid;
+  top: -204px;
+  /* background-color: #590178;
+  opacity: calc(0.5); */
+
+}
+
+.genre-info p{
+  z-index: 1;
+  margin: 0;
+  text-align: center;
+  align-self: center;
+  display: inline-block;
+  color: #ffee00;
+  font-weight: bold;
+  padding: 100px 0;
+}
+
+.show{
+  height: 100%;
+  background-color: #590178;
+  opacity: calc(.5);
 }

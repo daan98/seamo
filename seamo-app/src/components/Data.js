@@ -2,6 +2,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faUser, faVideo,  } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import comedyImg from '../assets/comedy/comedy.jpg';
+import actionImg from '../assets/action/action.png';
+import docuImg from '../assets/documentary/documentary.png';
+import dramaImg from '../assets/drama/drama.jpg';
+import kidImg from '../assets/kid/kid.jpg'
+import romanceImg from '../assets/romance/romance.png';
+import horrorImg from '../assets/horror/horror.png';
+import vintageImg from '../assets/vintage/vintage.png'
 
 export const getNavbarLink = [
     {
@@ -218,34 +225,42 @@ export const getMoviesImage = [
 export const getGenresImage = [
     {
         id: 1,
-        url: comedyImg
+        url: comedyImg,
+        genre: "Comedy",
     },
     {
         id: 2,
-        url: '../assets/action/action.png'
+        url: actionImg,
+        genre: "Action",
     },
     {
         id: 3,
-        url: '../assets/documentary/documentary.png'
+        url: docuImg,
+        genre: "Documentary"
     },
     {
         id: 4,
-        url: '../assets/drama/drama.jpg'
+        url: dramaImg,
+        genre: "Drama",
     },
     {
         id: 5,
-        url: '../assets/kid/kid.jpg'
+        url: kidImg,
+        genre: "Kid",
     },
     {
         id: 6,
-        url: '../assets/romance/romance.png'
+        url: romanceImg,
+        genre: "Romance",
     },
     {
         id: 7,
-        url: '../assets/horror/horror.png'
+        url: horrorImg,
+        genre: "Horror",
     },
     {
         id: 8,
-        url: '../assets/vintage/vintage.png'
+        url: vintageImg,
+        genre: "Vintage",
     },
 ]
