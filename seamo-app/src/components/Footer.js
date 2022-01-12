@@ -5,11 +5,11 @@ import { getSocialLink } from "./Data";
 function Footer(){
     return(
         <div>
-            <footer>
+            <footer className="center">
                 {getSocialLink.map(socialLink =>(
-                    <NavLink key={socialLink.id} to={socialLink.url} target="_blank"> {socialLink.icon} </NavLink>
+                    <NavLink key={socialLink.id} className="yellow" to={socialLink.url} target="_blank"> {socialLink.icon} </NavLink>
                 ))}
-                <p>Copyright &copy; 2022 Any Inc. All rights reserved.</p>
+                <p className="yellow">Copyright &copy; 2022 Any Inc. All rights reserved.</p>
             </footer>
         </div>
     );

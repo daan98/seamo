@@ -11,9 +11,9 @@ function Header(){
                     <NavLink
                      key={link.id}
                      style={({isActive}) => {
-                         return{ color: isActive ? "#000000" : "", backgroundColor: isActive ? "#049DB5" : "", borderColor: isActive ? "#000000" : "#FFEE00", };
+                         return{ color: isActive ? "#000000" : "", backgroundColor: isActive ? "#049DB5" : "", borderColor: isActive ? "#000000" : "", };
                      }}
-                     className="btn"
+                     className="center btn yellow"
                      to={link.url}
                     >
                         {link.icon}
