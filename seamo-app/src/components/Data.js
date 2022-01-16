@@ -3,6 +3,7 @@ import { faSearch, faUser, faVideo,  } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import comedyImg from '../assets/comedy/comedy.jpg';
 import actionImg from '../assets/action/action.png';
+import johnWick from '../assets/action/john-wick-3.png'
 import docuImg from '../assets/documentary/documentary.png';
 import dramaImg from '../assets/drama/drama.jpg';
 import kidImg from '../assets/kid/kid.jpg'
@@ -263,4 +264,8 @@ export const getGenresImage = [
         url: vintageImg,
         genre: "Vintage",
     },
-]
+];
+
+export const getUserInfo = {
+    img: johnWick,
+};

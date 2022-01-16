@@ -13,24 +13,25 @@ function Movies(){
     return(
         <div>
             <Header />
-            <div className="movie-container">
-                <h1 className="title center yellow">Added Recently</h1>
-                <Carousel 
-                 responsive={mainResponsive}
-                 swipeable={false}
-                 draggable={false}
-                 showDots={false}
-                 infinite={true}
-                 autoPlay={true}
-                 autoPlaySpeed={2000}
-                 keyBoardControl={true}
-                 >
-                    <div>Item 1</div>
-                </Carousel>
-                <h1 className="title yellow">Trend</h1>
-                <h1 className="title yellow">For You</h1>
+            <div className="background">
+                <div className="movie-container container">
+                    <h1 className="title center yellow">Added Recently</h1>
+                    <Carousel 
+                    responsive={mainResponsive}
+                    swipeable={false}
+                    draggable={false}
+                    showDots={false}
+                    infinite={true}
+                    autoPlay={true}
+                    autoPlaySpeed={2000}
+                    keyBoardControl={true}
+                    >
+                        <div>Item 1</div>
+                    </Carousel>
+                    <h1 className="title yellow">Trend</h1>
+                    <h1 className="title yellow">For You</h1>
+                </div>
             </div>
-            <section className="background"></section>
             <Footer />
         </div>
     );

@@ -1,6 +1,15 @@
 /** GLOBALS **/
 @import url(https://allfont.net/allfont.css?fonts=agency-fb-bold);
 
+img{
+  width: 100%;
+  height: 100%;
+}
+
+h1{ width: fit-content; }
+
+a{ text-decoration: none; }
+
 .title{ font-family: 'Agency FB Bold', arial; }
 
 .purple{ color: #590178; }
@@ -11,19 +20,20 @@
 
 .center{ text-align: center; }
 
-h1.border{
-  border-bottom: 4px solid #ffee00;
-}
+.border{ border-bottom: 4px solid #FFEE00; }
 
 .background{
-  height: 100vh;
-  background-color: #590178;
-  opacity: calc(.8);
+  background-color: rgba(89, 1, 120, .8);
+  min-height: 100vh;
 }
 
-img{
-  width: 100%;
+.container {
+  padding-top: 74px;
+  padding-bottom: 40px;
+  width: 80%;
+  margin: 0 auto;
 }
+
 
 /** COVER PAGE **/
 .enter {
@@ -41,7 +51,6 @@ img{
   border: 3px solid #FFEE00;
   border-radius: 40px;
   padding: 1% 4%;
-  text-decoration: none;
   font-size: 32px;
   transition: all ease-in-out .4s;
 }
@@ -55,11 +64,9 @@ img{
 
 /* HEADER */
 nav{
-  position: absolute;
-  z-index: 2;
+  position: fixed;
   width: 100%;
   display: flex;
-  justify-content: space-between;
 }
 
 .btn{
@@ -83,6 +90,7 @@ nav{
 footer{
   padding: 20px 0;
   background-color: #590178;
+  border-top: 4px solid #FFEE00;
 }
 
 footer a{
@@ -107,18 +115,9 @@ footer p{
 }
 
 /* MOVIES */
-.movie-container{
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  padding-top: 74px;
-}
+.movie-container{ width: 100%; }
 
 /* SEARCH */
-.search-container {
-  width: 80%;
-  left: 10%;
-}
 
 .genre-container{
   display: grid;
@@ -126,36 +125,102 @@ footer p{
   gap: 10px;
 }
 
-.genre-info{
-  height: 200px;
-}
+.genre-info{ height: 200px; }
 
-.genre-info img{
-  height: 200px;
-}
-
-.genre-info div{
+.synopsis{
   position: relative;
-  display: grid;
+  display: none;
+  text-align: center;
   top: -204px;
-  /* background-color: #590178;
-  opacity: calc(0.5); */
+  height: 100%;
+  transition: all ease-in-out 1s;
+}
 
+.genre-info:hover .synopsis{
+  display: grid;
+  transition: all ease-in-out 1s;
 }
 
 .genre-info p{
   z-index: 1;
   margin: 0;
-  text-align: center;
   align-self: center;
   display: inline-block;
   color: #ffee00;
   font-weight: bold;
-  padding: 100px 0;
+  padding: 89.5px 0;
 }
 
 .show{
-  height: 100%;
+  position: relative;
   background-color: #590178;
-  opacity: calc(.5);
+  opacity: calc(.2);
+}
+
+.show-search{
+  height: 200px;
+  top: -200px;
+}
+
+@media (max-width:767px){
+  .genre-container{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* SETTINGS */
+.setting-container{
+  display: flex;
+  justify-content: space-between;
+  column-gap: 40px;
+}
+
+.avatar{
+  width: 200px;
+  height: 200px;
+  align-self: center;
+}
+
+.avatar img{ 
+  border-radius: 50%;
+  border: 4px solid #FFEE00;
+}
+
+.user-info{ width: 100%; }
+
+.account{ margin-bottom: 40px; }
+
+.theme input{
+  width: 20px;
+  height: 20px;
+}
+
+.theme input:checked{
+  color: red;
+}
+.theme label{
+  vertical-align: 4px;
+  margin-right: 10px;
+}
+
+.theme label:last-of-type { margin-right: 0; }
+
+.account h1, .payment h1{ margin-bottom: 40px; }
+
+.account a, .payment a{
+  border: 3px solid #FFEE00;
+  border-radius: 40px;
+  padding: 1% 3%;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: all ease-in-out .4s;
+}
+
+.payment a:last-of-type{ margin-right: 0; }
+
+.account a:hover, .payment a:hover{
+  border-color: #000000;
+  background-color: #049DB5;
+  color: #000000;
+  transition: all ease-in-out .4s;
 }

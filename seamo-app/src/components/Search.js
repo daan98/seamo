@@ -6,22 +6,24 @@ import { getGenresImage } from './Data'
 function Search(){
     return(
         <div>
-            <Header />
-            <div className="movie-container search-container">
-                <h1 className="title yellow border" style={{width: "8.5%"}}>Genres</h1>
-                <div className="genre-container">
-                    {getGenresImage.map(genre => (
-                        <div key={genre.id} className="genre-info">
-                            <img src={genre.url} />
-                            <div>
-                                <p>{genre.genre}</p>
-                                <div className="show"></div>
+                <Header />
+            <div className="background">
+                <div className="container">
+                    <h1 className="title yellow border">Genres</h1>
+                    <div className="genre-container">
+                        {getGenresImage.map(genre => (
+                            <div key={genre.id} className="genre-info">
+                                <img src={genre.url} />
+                                <div className="synopsis">
+                                    <p>{genre.genre}</p>
+                                    <div className="show show-search"></div>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
+                {/* <section className="background"></section> */}
             </div>
-            <section className="background"></section>
             <Footer />
         </div>
     );
