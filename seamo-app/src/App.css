@@ -34,7 +34,6 @@ a{ text-decoration: none; }
   margin: 0 auto;
 }
 
-
 /** COVER PAGE **/
 .enter {
   background-image: url(./assets/videocamera.png);
@@ -64,6 +63,7 @@ a{ text-decoration: none; }
 
 /* HEADER */
 nav{
+  z-index: 1;
   position: fixed;
   width: 100%;
   display: flex;
@@ -117,6 +117,71 @@ footer p{
 /* MOVIES */
 .movie-container{ width: 100%; }
 
+/* CAROUSEL */
+.main-carousel-item .image-container{ height: 86vh; }
+
+.main-carousel-item img{ height: 80vh; }
+
+.main-carousel-item p{
+  margin: 0;
+  padding: 0 0 40px;
+  position: absolute;
+  top: 452px;
+  color: #FFEE00;
+  width: 90%;
+  right: 67px;
+  text-align: center;
+  background: rgba(89, 1, 120, .8);
+}
+
+.main-carousel-item span{ font-weight: bolder; }
+
+.react-multiple-carousel__arrow{
+  background:rgba(89, 1, 120, .8);
+  min-height:80vh;
+  border-radius: 0;
+  top: 0;
+}
+
+.react-multiple-carousel__arrow:hover{background:#049DB5}
+
+.react-multiple-carousel__arrow::before{
+  font-size: 120px;
+  color:#FFEE00;
+  font-family:revicons;
+  transition: all ease-in-out 0.4s;
+}
+
+.react-multiple-carousel__arrow:hover::before{
+  color: #000000;
+  transition: all ease-in-out 0.4s;
+}
+
+.react-multiple-carousel__arrow:disabled{background:rgba(89, 1, 120, .8);}
+
+.react-multiple-carousel__arrow--left{left:0;}
+
+.react-multiple-carousel__arrow--right{right:0;}
+
+.react-multi-carousel-dot button{
+  background-color: #ffee00;
+  border: 2px solid #FFEE00;
+  margin-right: 35px;
+  border-radius: 0%;
+  transition: all ease-in-out 0.4s;
+}
+
+.react-multi-carousel-dot button:hover{
+  background-color: #049DB5;
+  border: 2px solid #049DB5;
+  transition: all ease-in-out 0.4s;
+}
+
+.react-multi-carousel-dot--active button{
+  background-color: #049DB5;
+  border: 2px solid #049DB5;
+}
+
 /* SEARCH */
 
 .genre-container{
@@ -126,6 +191,8 @@ footer p{
 }
 
 .genre-info{ height: 200px; }
+
+.genre-info:hover{ cursor: pointer; }
 
 .synopsis{
   position: relative;
@@ -190,20 +257,22 @@ footer p{
 
 .account{ margin-bottom: 40px; }
 
-.theme input{
+.theme label span{ font-weight: bolder; }
+
+.theme input[type="radio"]{ display: none; }
+
+.theme input[type="radio"] + *::before{
+  content: "";
+  display: inline-block;
+  vertical-align: bottom;
+  margin: 0 10px 0 20px;
   width: 20px;
   height: 20px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
 }
 
-.theme input:checked{
-  color: red;
-}
-.theme label{
-  vertical-align: 4px;
-  margin-right: 10px;
-}
-
-.theme label:last-of-type { margin-right: 0; }
+.theme input[type="radio"]:checked + *::before{ background: #049DB5; }
 
 .account h1, .payment h1{ margin-bottom: 40px; }
 

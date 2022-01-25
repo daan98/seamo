@@ -1,6 +1,8 @@
+
 import React from "react";
 import Footer from "./Footer";
 import Header from "./Header";
+import { getUserInfo } from "./Data";
 import Carousel from 'react-multi-carousel';
 
 function Movies(){
@@ -20,13 +22,36 @@ function Movies(){
                     responsive={mainResponsive}
                     swipeable={false}
                     draggable={false}
-                    showDots={false}
+                    showDots={true}
                     infinite={true}
-                    autoPlay={true}
-                    autoPlaySpeed={2000}
+                    autoPlay={false}
+                    autoPlaySpeed={90000}
                     keyBoardControl={true}
                     >
-                        <div>Item 1</div>
+                        <div className="main-carousel-item">
+                            <div className="image-container">
+                                <img src={getUserInfo.img} alt="TEST" />
+                            </div>
+                            <p className="yellow"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo ligula, dapibus a iaculis sit amet, rutrum et tellus. Nullam sed odio vestibulum, scelerisque tellus mollis, consequat mi. Nullam eget blandit sem, nec porttitor urna. Etiam mattis lorem ut dolor ornare, ut consectetur justo volutpat. Phasellus vitae imperdiet turpis.</p>
+                        </div>
+                        <div className="main-carousel-item">
+                            <div className="image-container">
+                                <img src={getUserInfo.img} alt="TEST" />
+                            </div>
+                            <p className="yellow"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo ligula, dapibus a iaculis sit amet, rutrum et tellus. Nullam sed odio vestibulum, scelerisque tellus mollis, consequat mi. Nullam eget blandit sem, nec porttitor urna. Etiam mattis lorem ut dolor ornare, ut consectetur justo volutpat. Phasellus vitae imperdiet turpis.</p>
+                        </div>
+                        <div className="main-carousel-item">
+                            <div className="image-container">
+                                <img src={getUserInfo.img} alt="TEST" />
+                            </div>
+                            <p className="yellow"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo ligula, dapibus a iaculis sit amet, rutrum et tellus. Nullam sed odio vestibulum, scelerisque tellus mollis, consequat mi. Nullam eget blandit sem, nec porttitor urna. Etiam mattis lorem ut dolor ornare, ut consectetur justo volutpat. Phasellus vitae imperdiet turpis.</p>
+                        </div>
+                        <div className="main-carousel-item">
+                            <div className="image-container">
+                                <img src={getUserInfo.img} alt="TEST" />
+                            </div>
+                            <p className="yellow"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo ligula, dapibus a iaculis sit amet, rutrum et tellus. Nullam sed odio vestibulum, scelerisque tellus mollis, consequat mi. Nullam eget blandit sem, nec porttitor urna. Etiam mattis lorem ut dolor ornare, ut consectetur justo volutpat. Phasellus vitae imperdiet turpis.</p>
+                        </div>
                     </Carousel>
                     <h1 className="title yellow">Trend</h1>
                     <h1 className="title yellow">For You</h1>

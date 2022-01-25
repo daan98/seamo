@@ -1,3 +1,4 @@
+import "react-multi-carousel/lib/styles.css"
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import FoundError from './components/FoundError';
