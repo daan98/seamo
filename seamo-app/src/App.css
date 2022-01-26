@@ -119,6 +119,10 @@ footer p{
 /* MOVIES */
 .movie-container{ width: 100%; }
 
+.movie-container h1:first-child{ margin: 0.67em auto; }
+
+.movie-container h1:nth-child(3), .movie-container h1:last-of-type { margin-left: 50px; }
+
 /* MAIN CAROUSEL */
 .main-carousel-item .image-container{ height: 86vh; }
 
@@ -203,34 +207,32 @@ footer p{
 
 .carousel-container .react-multi-carousel-item{ text-align: center; }
 
-.carousel-item{ height: 200px; }
+.carousel-item{
+  height: 200px;
+  width: 80%;
+  margin: 0 auto;
+}
 
 .carousel-container .react-multiple-carousel__arrow{
-  min-height: 200px;
+  min-height: 10px;
   background-color: transparent;
+  top: 33%;
 }
 
 .carousel-container .react-multiple-carousel__arrow::before{ font-size: 30px;}
 
 .carousel-container .react-multiple-carousel__arrow:hover::before { color: #049DB5; }
 
-.carousel-container .react-multiple-carousel__arrow--left::before { left: -14px; }
+.carousel-container .react-multiple-carousel__arrow--left { left: -14px; }
 
-.carousel-container .react-multiple-carousel__arrow--right::before { right: -14px; }
-
-.carousel-item img{ 
-  height: 200px;
-  width: 85%;
-  text-align: center;
-  margin: 0 auto;
-}
+.carousel-container .react-multiple-carousel__arrow--right { right: -14px; }
 
 .carousel-item .movie-info-container{
   display: none;
   position: absolute;
   top: 0px;
-  right: 23px;
-  width: 85%;
+  right: 30px;
+  width: 80.3%;
   height: 100%;
   background-color: rgba(89, 1, 120, .8);
 }

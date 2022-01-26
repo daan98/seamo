@@ -6,7 +6,7 @@ import { getGenresImage } from './Data'
 function Search(){
     return(
         <div>
-                <Header />
+            <Header />
             <div className="background">
                 <div className="container">
                     <h1 className="title yellow border">Genres</h1>

@@ -1,9 +1,9 @@
 
 import React from "react";
+import Carousel from 'react-multi-carousel';
 import Footer from "./Footer";
 import Header from "./Header";
-import { getUserInfo } from "./Data";
-import Carousel from 'react-multi-carousel';
+import { getMoviesImage, getUserInfo } from "./Data";
 
 function Movies(){
     const mainResponsive = {
@@ -32,12 +32,22 @@ function Movies(){
         }
     };
 
+    const changeImage = () => {
+        let backImage = document.getElementsByClassName("image-background");
+        console.log(backImage);
+        // backImage.style.backgroundColor = "black";
+        /* setTimeout(() => {
+        }, 2000); */
+    }
+
+    changeImage();
+
     return(
-        <div>
+        <div className="image-background">
             <Header />
             <div className="background">
                 <div className="movie-container container">
-                    <h1 className="title yellow" style={{margin: "0.67em auto"}} >Added Recently</h1>
+                    <h1 className="title yellow" >Added Recently</h1>
                     <Carousel 
                     responsive={mainResponsive}
                     swipeable={false}
