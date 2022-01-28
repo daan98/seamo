@@ -1,18 +1,20 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import Carousel from 'react-multi-carousel';
 import Footer from "./Footer";
 import Header from "./Header";
-import { getMoviesImage, getUserInfo } from "./Data";
+import { getUserInfo } from "./Data";
 
-function Movies(){
+function Movies(props){
+    const { changeImg } = props
+    
     const mainResponsive = {
         uniqueSize: {
             breakpoint: {max: 4000, min: 0},
             items: 1,
         }
     }
-
+    
     const secondaryResponsive = {
         superLarge: {
             breakpoint: { max: 4000, min: 3001 },
@@ -31,19 +33,15 @@ function Movies(){
             items: 2
         }
     };
-
-    const changeImage = () => {
-        let backImage = document.getElementsByClassName("image-background");
-        console.log(backImage);
-        // backImage.style.backgroundColor = "black";
-        /* setTimeout(() => {
-        }, 2000); */
-    }
-
-    changeImage();
+    
+    useEffect(() => {
+        setInterval(() => {
+            changeImg();
+        }, 5000);
+    }, [])
 
     return(
-        <div className="image-background">
+        <div id="main-element">
             <Header />
             <div className="background">
                 <div className="movie-container container">

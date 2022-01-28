@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getUserInfo } from "./Data";
 import Footer from "./Footer";
 import Header from "./Header";
 
-function Setting(){
+function Setting(props){
+    const{ changeImg } = props;
+    
     const { img } = getUserInfo;
     
     const onChecked = (e) => {
@@ -29,8 +31,14 @@ function Setting(){
         }
     }
 
+    useEffect(() => {
+        setInterval(() => {
+            changeImg();
+        }, 5000);
+    }, [])
+
     return(
-        <div>
+        <div id="main-element">
             <Header />
             <div className="background">
                 <div className="container setting-container">

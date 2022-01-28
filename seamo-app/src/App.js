@@ -7,14 +7,24 @@ import Search from './components/Search';
 import Setting from './components/Setting';
 import Welcome from './components/Welcome';
 import Social from './components/Social';
+import { getMoviesImage } from './components/Data'
 
 function App() {
+
+  function changeImage(e) {
+    let mainElement = document.getElementById("main-element");
+    const urlImage = Math.random() * getMoviesImage.length;
+    const showImage = Math.round(urlImage);
+    
+    mainElement.style.backgroundImage = `url(${getMoviesImage[showImage].url})`;
+  }
+
   return (
     <div>
       <Routes>
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/setting" element={<Setting />} />
+        <Route path="/movies" element={<Movies changeImg={changeImage} />} />
+        <Route path="/search" element={<Search changeImg={changeImage} />} />
+        <Route path="/setting" element={<Setting changeImg={changeImage} />} />
         <Route path="/facebook" element={<Social socialMedia="facebook" />} />
         <Route path="/instagram" element={<Social socialMedia="instagram" />} />
         <Route path="/twitter" element={<Social socialMedia="twitter" />} />

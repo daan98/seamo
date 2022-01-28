@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import { getGenresImage } from './Data'
 
-function Search(){
+function Search(props){
+    const { changeImg } = props;
+
+    useEffect(() => {
+        setInterval(() => {
+            changeImg();
+        }, 5000);
+    }, [])
+
     return(
-        <div>
+        <div id="main-element">
             <Header />
             <div className="background">
                 <div className="container">

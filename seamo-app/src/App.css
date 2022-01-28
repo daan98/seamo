@@ -22,6 +22,14 @@ a{ text-decoration: none; }
 
 .border{ border-bottom: 4px solid #FFEE00; }
 
+#main-element{ transition: all ease-in-out .5s; }
+
+#main-element, .enter{
+  background-image: url(./assets/videocamera.png);  
+  background-size: cover;
+  background-position: center;
+}
+
 .background{
   background-color: rgba(89, 1, 120, .8);
   min-height: 100vh;
@@ -37,12 +45,7 @@ a{ text-decoration: none; }
 .image-container{ height: 100%; }
 
 /** COVER PAGE **/
-.enter {
-  background-image: url(./assets/videocamera.png);
-  background-size: cover;
-  background-position: center;  
-  height: 100vh;
-}
+.enter { height: 100vh; }
 
 .initial-btn{
   position: absolute;
