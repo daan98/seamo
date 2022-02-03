@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faUser, faVideo,  } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faUser, faVideo, faInfoCircle, faPlay } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import actionImg from '../assets/action/action.png';
 import isSpartar from '../assets/action/300.png';
@@ -98,211 +98,261 @@ export const getMoviesImage = [
         id: 1,
         url: isSpartar,
         genre: ["action"],
+        recent: true,
+        play: faPlay,
+        info: faInfoCircle,
     },
     {
         id: 2,
         url: deadpool,
         genre: ["action", "comedy"],
+        recent: false,
     },
     {
         id: 3,
         url: endGame,
         genre: ["action", "comedy", "drama"],
+        recent: false,
     },
     {
         id: 4,
         url: fastEight,
         genre: ["action", "comedy", "drama"],
+        recent: false,
     },
     {
         id: 5,
         url: johnWick,
         genre: ["action"],
+        recent: false,
     },
     {
         id: 6,
         url: superman,
         genre: ["action", "sci-fi"],
+        recent: false,
     },
     {
         id: 7,
         url: matrix,
         genre: ["action", "sci-fi", "romance"],
+        recent: false,
     },
     {
         id: 8,
         url: grownUp,
         genre: ["comedy"],
+        recent: false,
     },
     {
         id: 9,
         url: littleMan,
         genre: ["comedy"],
+        recent: false,
     },
     {
         id: 10,
         url: norbit,
         genre: ["comedy"],
+        recent: false,
     },
     {
         id: 11,
         url: vacation,
         genre: ["comedy"],
+        recent: false,
     },
     {
         id: 12,
         url: theMillers,
         genre: ["comedy"],
+        recent: false,
     },
     {
         id: 13,
         url: abducted,
         genre: ["documentary"],
+        recent: false,
     },
     {
         id: 14,
         url: lilPeep,
         genre: ["documentary"],
+        recent: false,
     },
     {
         id: 15,
         url: rousey,
         genre: ["documentary"],
+        recent: false,
     },
     {
         id: 16,
         url: sepultura,
         genre: ["documentary"],
+        recent: false,
     },
     {
         id: 17,
         url: superSize,
         genre: ["documentary"],
+        recent: false,
     },
     {
         id: 18,
         url: collaBeuaty,
         genre: ["drama"],
+        recent: false,
     },
     {
         id: 19,
         url: concussion,
         genre: ["drama"],
+        recent: false,
     },
     {
         id: 20,
         url: creedII,
         genre: ["drama", "comedy"],
+        recent: false,
     },
     {
         id: 21,
         url: sevenPounds,
         genre: ["drama"],
+        recent: false,
     },
     {
         id: 22,
         url: impossible,
         genre: ["drama"],
+        recent: false,
     },
     {
         id: 23,
         url: quietPlaceII,
         genre: ["horror", "suspense", "sci-fi"],
+        recent: true,
+        play: faPlay,
+        info: faInfoCircle,
     },
     {
         id: 24,
         url: deadSilence,
         genre: ["horror", "suspense"],
+        recent: false,
     },
     {
         id: 25,
         url: itII,
         genre: ["horror", "suspense"],
+        recent: false,
     },
     {
         id: 26,
         url: markedOnes,
         genre: ["horror", "suspense"],
+        recent: false,
     },
     {
         id: 27,
         url: witch,
         genre: ["horror", "suspense"],
+        recent: false,
     },
     {
         id: 28,
         url: dorado,
         genre: ["kid", "animation", "action", "history"],
+        recent: false,
     },
     {
         id: 29,
         url: trainDragonIII,
         genre: ["kid", "animation", "action", "history"],
+        recent: false,
     },
     {
         id: 30,
         url: shrekII,
         genre: ["kid", "animation", "action", "comedy"],
+        recent: false,
     },
     {
         id: 31,
         url: sinbad,
         genre: ["kid", "animation", "action"],
+        recent: false,
     },
     {
         id: 32,
         url: croods,
         genre: ["kid", "animation", "action"],
+        recent: false,
     },
     {
         id: 33,
         url: time,
         genre: ["romance", "comedy", "sci-fi", "drama"],
+        recent: false,
     },
     {
         id: 34,
         url: hitch,
         genre: ["romance", "comedy", "drama"],
+        recent: false,
     },
     {
         id: 35,
         url: longRide,
         genre: ["romance", "drama"],
+        recent: false,
     },
     {
         id: 36,
         url: vow,
         genre: ["romance", "drama"],
+        recent: false,
     },
     {
         id: 37,
         url: yourName,
         genre: ["romance", "drama", "anime"],
+        recent: true,
+        play: faPlay,
+        info: faInfoCircle,
     },
     {
         id: 38,
         url: kane,
         genre: ["vintage", "drama"],
+        recent: false,
     },
     {
         id: 39,
         url: enterDragon,
         genre: ["vintage", "action", "drama"],
+        recent: false,
     },
     {
         id: 40,
         url: godFather,
         genre: ["vintage", "action", "drama"],
+        recent: true,
+        play: faPlay,
+        info: faInfoCircle,
     },
     {
         id: 41,
         url: psycho,
         genre: ["vintage", "horror", "drama"],
+        recent: false,
     },
     {
         id: 42,
         url: ozWizard,
         genre: ["vintage", "sci-fi", "musical"],
+        recent: false,
     },
 ];
 
@@ -352,3 +402,7 @@ export const getGenresImage = [
 export const getUserInfo = {
     img: johnWick,
 };
+
+export const play = faPlay;
+
+export const info = faInfoCircle;

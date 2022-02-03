@@ -72,6 +72,12 @@ nav{
   position: fixed;
   width: 100%;
   display: flex;
+  transition: all ease-in-out .4s;
+}
+
+.hide-nav{
+  transform: translateY(-100%);
+  transition: all ease-in-out .4s;
 }
 
 .btn{
@@ -81,7 +87,7 @@ nav{
   font-family: 'Agency FB Bold', arial;
   text-decoration: none;
   font-size: 25px;
-  transition: all ease-in-out;
+  transition: all ease-in-out .4s;
 }
 
 .btn:hover{
@@ -150,6 +156,7 @@ footer p{
   min-height: 80vh;
   border-radius: 0;
   top: 0;
+  z-index: 0;
 }
 
 .react-multiple-carousel__arrow:hover{background:#049DB5}
@@ -239,6 +246,8 @@ footer p{
   height: 100%;
   background-color: rgba(89, 1, 120, .8);
 }
+
+.carousel-item:hover .movie-info-container{ display: block; }
 
 .carousel-item .movie-info-container p{ margin: 0; }
 

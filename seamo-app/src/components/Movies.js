@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import Carousel from 'react-multi-carousel';
 import Footer from "./Footer";
 import Header from "./Header";
-import { getUserInfo } from "./Data";
+import { getMoviesImage } from "./Data";
 
 function Movies(props){
     const { changeImg } = props
@@ -38,7 +38,7 @@ function Movies(props){
         setInterval(() => {
             changeImg();
         }, 5000);
-    }, [])
+    }, [changeImg])
 
     return(
         <div id="main-element">
@@ -56,30 +56,18 @@ function Movies(props){
                     autoPlaySpeed={90000}
                     keyBoardControl={true}
                     >
-                        <div className="main-carousel-item">
-                            <div className="image-container">
-                                <img src={getUserInfo.img} alt="TEST" />
-                            </div>
-                            <p className="yellow"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo ligula, dapibus a iaculis sit amet, rutrum et tellus. Nullam sed odio vestibulum, scelerisque tellus mollis, consequat mi. Nullam eget blandit sem, nec porttitor urna. Etiam mattis lorem ut dolor ornare, ut consectetur justo volutpat. Phasellus vitae imperdiet turpis.</p>
-                        </div>
-                        <div className="main-carousel-item">
-                            <div className="image-container">
-                                <img src={getUserInfo.img} alt="TEST" />
-                            </div>
-                            <p className="yellow"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo ligula, dapibus a iaculis sit amet, rutrum et tellus. Nullam sed odio vestibulum, scelerisque tellus mollis, consequat mi. Nullam eget blandit sem, nec porttitor urna. Etiam mattis lorem ut dolor ornare, ut consectetur justo volutpat. Phasellus vitae imperdiet turpis.</p>
-                        </div>
-                        <div className="main-carousel-item">
-                            <div className="image-container">
-                                <img src={getUserInfo.img} alt="TEST" />
-                            </div>
-                            <p className="yellow"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo ligula, dapibus a iaculis sit amet, rutrum et tellus. Nullam sed odio vestibulum, scelerisque tellus mollis, consequat mi. Nullam eget blandit sem, nec porttitor urna. Etiam mattis lorem ut dolor ornare, ut consectetur justo volutpat. Phasellus vitae imperdiet turpis.</p>
-                        </div>
-                        <div className="main-carousel-item">
-                            <div className="image-container">
-                                <img src={getUserInfo.img} alt="TEST" />
-                            </div>
-                            <p className="yellow"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo ligula, dapibus a iaculis sit amet, rutrum et tellus. Nullam sed odio vestibulum, scelerisque tellus mollis, consequat mi. Nullam eget blandit sem, nec porttitor urna. Etiam mattis lorem ut dolor ornare, ut consectetur justo volutpat. Phasellus vitae imperdiet turpis.</p>
-                        </div>
+                        {getMoviesImage.map(movie => {
+                            if(movie.recent){
+                                return(
+                                    <div key={movie.id} className="main-carousel-item">
+                                        <div className="image-container">
+                                            <img src={movie.url} alt="TEST" />
+                                        </div>
+                                        <p className="yellow"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo ligula, dapibus a iaculis sit amet, rutrum et tellus. Nullam sed odio vestibulum, scelerisque tellus mollis, consequat mi. Nullam eget blandit sem, nec porttitor urna. Etiam mattis lorem ut dolor ornare, ut consectetur justo volutpat. Phasellus vitae imperdiet turpis.</p>
+                                    </div>
+                                );
+                            } else{ return ( true )}
+                        })}
                     </Carousel>
 
                     <h1 className="title yellow">Trend</h1>
@@ -94,38 +82,20 @@ function Movies(props){
                     keyBoardControl={true}
                     className="carousel-container"
                     >
-                        <div className="carousel-item">
-                            <div className="image-container">
-                                <img src={getUserInfo.img} alt="TEST" />
-                            </div>
-                            <div className="movie-info-container">
-                                <p className="yellow"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo ligula, dapibus a iaculis sit amet, rutrum et tellus. Nullam sed odio vestibulum, scelerisque tellus mollis, consequat mi. Nullam eget blandit sem, nec porttitor urna. Etiam mattis lorem ut dolor ornare, ut consectetur justo volutpat. Phasellus vitae imperdiet turpis.</p>
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <div className="image-container">
-                                <img src={getUserInfo.img} alt="TEST" />
-                            </div>
-                            <div className="movie-info-container">
-                                <p className="yellow"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo ligula, dapibus a iaculis sit amet, rutrum et tellus. Nullam sed odio vestibulum, scelerisque tellus mollis, consequat mi. Nullam eget blandit sem, nec porttitor urna. Etiam mattis lorem ut dolor ornare, ut consectetur justo volutpat. Phasellus vitae imperdiet turpis.</p>
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <div className="image-container">
-                                <img src={getUserInfo.img} alt="TEST" />
-                            </div>
-                            <div className="movie-info-container">
-                                <p className="yellow"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo ligula, dapibus a iaculis sit amet, rutrum et tellus. Nullam sed odio vestibulum, scelerisque tellus mollis, consequat mi. Nullam eget blandit sem, nec porttitor urna. Etiam mattis lorem ut dolor ornare, ut consectetur justo volutpat. Phasellus vitae imperdiet turpis.</p>
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <div className="image-container">
-                                <img src={getUserInfo.img} alt="TEST" />
-                            </div>
-                            <div className="movie-info-container">
-                                <p className="yellow"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo ligula, dapibus a iaculis sit amet, rutrum et tellus. Nullam sed odio vestibulum, scelerisque tellus mollis, consequat mi. Nullam eget blandit sem, nec porttitor urna. Etiam mattis lorem ut dolor ornare, ut consectetur justo volutpat. Phasellus vitae imperdiet turpis.</p>
-                            </div>
-                        </div>
+                        {getMoviesImage.map(movie => {
+                            if(movie.recent){
+                                return(
+                                    <div key={movie.id} className="carousel-item">
+                                        <div className="image-container">
+                                            <img src={movie.url} alt="TEST" />
+                                        </div>
+                                        <div className="movie-info-container">
+                                            <p className="yellow"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo ligula, dapibus a iaculis sit amet, rutrum et tellus. Nullam sed odio vestibulum, scelerisque tellus mollis, consequat mi. Nullam eget blandit sem, nec porttitor urna. Etiam mattis lorem ut dolor ornare, ut consectetur justo volutpat. Phasellus vitae imperdiet turpis.</p>
+                                        </div>
+                                    </div>
+                                );
+                            } else { return( true ); }
+                        })}
                     </Carousel>
 
                     <h1 className="title yellow">For You</h1>
@@ -140,38 +110,20 @@ function Movies(props){
                     keyBoardControl={true}
                     className="carousel-container"
                     >
-                        <div className="carousel-item">
-                            <div className="image-container">
-                                <img src={getUserInfo.img} alt="TEST" />
-                            </div>
-                            <div className="movie-info-container">
-                                <p className="yellow"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo ligula, dapibus a iaculis sit amet, rutrum et tellus. Nullam sed odio vestibulum, scelerisque tellus mollis, consequat mi. Nullam eget blandit sem, nec porttitor urna. Etiam mattis lorem ut dolor ornare, ut consectetur justo volutpat. Phasellus vitae imperdiet turpis.</p>
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <div className="image-container">
-                                <img src={getUserInfo.img} alt="TEST" />
-                            </div>
-                            <div className="movie-info-container">
-                                <p className="yellow"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo ligula, dapibus a iaculis sit amet, rutrum et tellus. Nullam sed odio vestibulum, scelerisque tellus mollis, consequat mi. Nullam eget blandit sem, nec porttitor urna. Etiam mattis lorem ut dolor ornare, ut consectetur justo volutpat. Phasellus vitae imperdiet turpis.</p>
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <div className="image-container">
-                                <img src={getUserInfo.img} alt="TEST" />
-                            </div>
-                            <div className="movie-info-container">
-                                <p className="yellow"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo ligula, dapibus a iaculis sit amet, rutrum et tellus. Nullam sed odio vestibulum, scelerisque tellus mollis, consequat mi. Nullam eget blandit sem, nec porttitor urna. Etiam mattis lorem ut dolor ornare, ut consectetur justo volutpat. Phasellus vitae imperdiet turpis.</p>
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <div className="image-container">
-                                <img src={getUserInfo.img} alt="TEST" />
-                            </div>
-                            <div className="movie-info-container">
-                                <p className="yellow"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo ligula, dapibus a iaculis sit amet, rutrum et tellus. Nullam sed odio vestibulum, scelerisque tellus mollis, consequat mi. Nullam eget blandit sem, nec porttitor urna. Etiam mattis lorem ut dolor ornare, ut consectetur justo volutpat. Phasellus vitae imperdiet turpis.</p>
-                            </div>
-                        </div>
+                        {getMoviesImage.map(movie => {
+                            if(movie.recent){
+                                return(
+                                    <div key={movie.id} className="carousel-item">
+                                        <div className="image-container">
+                                            <img src={movie.url} alt="TEST" />
+                                        </div>
+                                        <div className="movie-info-container">
+                                            <p className="yellow"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                                        </div>
+                                    </div>
+                                );
+                            } else{ return(true) }
+                        })}
                     </Carousel>
                 </div>
             </div>
