@@ -1,9 +1,12 @@
 
+import './Movies.css';
+import './Carousel.css';
 import React, { useEffect } from "react";
 import Carousel from 'react-multi-carousel';
 import Footer from "./Footer";
 import Header from "./Header";
-import { getMoviesImage } from "./Data";
+import { getMoviesImage, info, play } from "./Data";
+import { NavLink } from 'react-router-dom';
 
 function Movies(props){
     const { changeImg } = props
@@ -32,6 +35,17 @@ function Movies(props){
             breakpoint: { max: 767, min: 0 },
             items: 2
         }
+    };
+
+    const infoMovie = (e) => {
+        const infoSvg = document.getElementById('info');
+        const playSvg = document.getElementById('play');
+
+        console.log(typeof e.target.nearestViewportElement.className.animVal);
+        console.log(e);
+        
+        if(e.target.nearestViewportElement.className.animVal.includes('info')) window.open("https://www.youtube.com/c/ReneZZ")
+        
     };
     
     useEffect(() => {
@@ -90,7 +104,10 @@ function Movies(props){
                                             <img src={movie.url} alt="TEST" />
                                         </div>
                                         <div className="movie-info-container">
-                                            <p className="yellow"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo ligula, dapibus a iaculis sit amet, rutrum et tellus. Nullam sed odio vestibulum, scelerisque tellus mollis, consequat mi. Nullam eget blandit sem, nec porttitor urna. Etiam mattis lorem ut dolor ornare, ut consectetur justo volutpat. Phasellus vitae imperdiet turpis.</p>
+                                            <p className="yellow preview-info"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                                            <NavLink id='play' to="/setting" className="yellow movie-icon">{play}</NavLink>
+                                            {/* <p id="play" className="yellow movie-icon" onClick={(e) => infoMovie(e)}>{play}</p> */}
+                                            <p id="info" className="yellow movie-icon" onClick={(e) => infoMovie(e)}>{info}</p>
                                         </div>
                                     </div>
                                 );
@@ -118,7 +135,9 @@ function Movies(props){
                                             <img src={movie.url} alt="TEST" />
                                         </div>
                                         <div className="movie-info-container">
-                                            <p className="yellow"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                                            <p className="yellow preview-info"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                                            <NavLink id='play' to="/setting" className="yellow movie-icon">{play}</NavLink>
+                                            <p id="info" className="yellow movie-icon" onClick={(e) => infoMovie(e)}>{info}</p>
                                         </div>
                                     </div>
                                 );
@@ -127,6 +146,7 @@ function Movies(props){
                     </Carousel>
                 </div>
             </div>
+            
             <Footer />
         </div>
     );

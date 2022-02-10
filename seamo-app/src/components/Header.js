@@ -1,23 +1,10 @@
 import React, { useEffect, useState } from "react";
-import '../App.css';
 import { getNavbarLink } from './Data'
 import { NavLink } from "react-router-dom";
 
 function Header(){
-    // const [ scroll, setScroll ] = useState(window.scrollY);
     const navbar = document.getElementById("navbar");
-    const [ scrollDir, setScrollDir ] = useState("scrolling down");
-
-    /* const handleScroll = (e) => {
-        console.log(e);
-        const createdWindow = e.currentTarget;
-        if(scroll > createdWindow.scrollY){
-            console.log("scrolling up");
-        } else if(scroll < createdWindow.scrollY){
-            console.log("scrolling down");
-        }
-        setScroll(createdWindow.scrollY);
-    }; */
+    const [ scrollDir, setScrollDir ] = useState("scrolling up");
 
     useEffect(() => {
         const threshold = 0;
@@ -34,7 +21,12 @@ function Header(){
 
             setScrollDir(indexY > lastIndexY ? "scrolling down" : "scrolling up");
 
-            if(scrollDir === "scrolling down"){ navbar.className = "hide-nav"; } else if(scrollDir === "scrolling up") { navbar.classList.remove("hide-nav") }
+            if(scrollDir === "scrolling down"){
+                navbar.classList.add("hide-nav");
+            } else if(scrollDir === "scrolling up"){
+                navbar.classList.remove("hide-nav");
+            }
+
 
             lastIndexY = indexY;
             ticking = false;

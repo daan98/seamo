@@ -99,8 +99,6 @@ export const getMoviesImage = [
         url: isSpartar,
         genre: ["action"],
         recent: true,
-        play: faPlay,
-        info: faInfoCircle,
     },
     {
         id: 2,
@@ -233,8 +231,6 @@ export const getMoviesImage = [
         url: quietPlaceII,
         genre: ["horror", "suspense", "sci-fi"],
         recent: true,
-        play: faPlay,
-        info: faInfoCircle,
     },
     {
         id: 24,
@@ -319,8 +315,6 @@ export const getMoviesImage = [
         url: yourName,
         genre: ["romance", "drama", "anime"],
         recent: true,
-        play: faPlay,
-        info: faInfoCircle,
     },
     {
         id: 38,
@@ -339,8 +333,6 @@ export const getMoviesImage = [
         url: godFather,
         genre: ["vintage", "action", "drama"],
         recent: true,
-        play: faPlay,
-        info: faInfoCircle,
     },
     {
         id: 41,
@@ -403,6 +395,6 @@ export const getUserInfo = {
     img: johnWick,
 };
 
-export const play = faPlay;
+export const play = <FontAwesomeIcon icon={faPlay}/>;
 
-export const info = faInfoCircle;
+export const info = <FontAwesomeIcon icon={faInfoCircle} />;
