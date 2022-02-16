@@ -1,68 +1,67 @@
 /* CAROUSEL */
 .carousel-container{
-    width: 90%;
-    margin:  0 auto;
-    padding-bottom: 40px;
-  }
-  
-  .carousel-container .react-multi-carousel-item{ text-align: center; }
-  
-  .carousel-item{
-    height: 200px;
-    width: 80%;
-    margin: 0 auto;
-  }
-  
-  .carousel-container .react-multiple-carousel__arrow{
-    min-height: 10px;
-    background-color: transparent;
-    top: 33%;
-  }
-  
-  .carousel-container .react-multiple-carousel__arrow::before{ font-size: 30px;}
-  
-  .carousel-container .react-multiple-carousel__arrow:hover::before { color: #049DB5; }
-  
-  .carousel-container .react-multiple-carousel__arrow--left { left: -14px; }
-  
-  .carousel-container .react-multiple-carousel__arrow--right { right: -14px; }
-  
-  .carousel-item .movie-info-container{
-    display: none;
-    position: absolute;
-    top: 0px;
-    right: 30px;
-    width: 80.3%;
-    height: 100%;
-    background-color: rgba(89, 1, 120, .8);
-  }
-  
-  .carousel-item:hover .movie-info-container{ display: block; }
+  width: 90%;
+  margin:  0 auto;
+  padding-bottom: 40px;
+}
 
-  .movie-icon{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-bottom: 10px;
-    margin-right: 22px;
-  }
-  
-  .movie-icon svg:hover{
-    color: #049DB5;
-    cursor: pointer;
-    transition: all ease-in-out .4s;
-  }
-  
-  .movie-icon svg:nth-child(1){ margin-right: 10px; }
-  
-  #info{ margin-right: 52px; }
-  
-  /* .carousel-item .movie-info-container p{ margin: 0; } */
-  
-  .carousel-container .react-multi-carousel-dot-list{ justify-content: end; }
-  
-  .carousel-container .react-multi-carousel-dot button {
-    width: 25px;
-    height: 8px;
-    margin-right: 30px;
-  }
+.carousel-container .react-multi-carousel-item{ text-align: center; }
+
+.carousel-item{
+  height: 200px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.carousel-container .react-multiple-carousel__arrow{
+  min-height: 10px;
+  background-color: transparent;
+  top: 33%;
+}
+
+.carousel-container .react-multiple-carousel__arrow::before{ font-size: 30px;}
+
+.carousel-container .react-multiple-carousel__arrow:hover::before { color: #049DB5; }
+
+.carousel-container .react-multiple-carousel__arrow--left { left: -14px; }
+
+.carousel-container .react-multiple-carousel__arrow--right { right: -14px; }
+
+.carousel-item .movie-info-container{
+  display: none;
+  position: absolute;
+  top: 0px;
+  width: calc(100% - 20%);
+  height: 100%;
+  background-color: rgba(89, 1, 120, .8);
+}
+
+.carousel-item:hover .movie-info-container{ display: block; }
+
+.movie-icon{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 10px;
+  margin-right: 22px;
+}
+
+.movie-icon svg:hover{
+  color: #049DB5;
+  cursor: pointer;
+  transition: all ease-in-out .4s;
+}
+
+.movie-icon svg:nth-child(1){ margin-right: 10px; }
+
+#info{ margin-right: 52px; }
+
+/* .carousel-item .movie-info-container p{ margin: 0; } */
+
+.carousel-container .react-multi-carousel-dot-list{ justify-content: end; }
+
+.carousel-container .react-multi-carousel-dot button {
+  width: 25px;
+  height: 8px;
+  margin-right: 30px;
+}

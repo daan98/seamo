@@ -1,23 +1,24 @@
 /* MOVIES */
 .movie-container{ width: 100%; }
 
-.movie-container h1:first-child{ margin: 0.67em auto; }
-
 .movie-container h1:nth-child(3), .movie-container h1:last-of-type { margin-left: 50px; }
+
+.movie-container h1:first-child{ margin: 0.67em auto; }
 
 /* MAIN CAROUSEL */
 .main-carousel-item .image-container{ height: 86vh; }
 
 .main-carousel-item img{ height: 80vh; }
 
-.main-carousel-item p{
+.main-description{
   position: absolute;
-  margin: 0;
-  padding: 0 0 40px;
-  top: 448px;
-  color: #FFEE00;
-  width: 89.9%;
-  right: 68px;
+  bottom: 7%;
+  left: 0;
+  right: 0;
+  height: fit-content;
+  margin: 0 auto;
+  padding: 0 0 10px;
+  width: calc(100% - 136px);
   text-align: center;
   background: rgba(89, 1, 120, .8);
 }
@@ -53,15 +54,6 @@
 
 .react-multiple-carousel__arrow--right{right:0;}
 
-@-moz-document url-prefix(){
-  /* MAIN CAROUSEL */
-  .main-carousel-item p{
-    width: 90.5%;
-    top: 464px;
-    right: 64px;
-  }
-}
-
 .react-multi-carousel-dot button{
   background-color: #ffee00;
   border: 2px solid #FFEE00;
@@ -79,4 +71,17 @@
 .react-multi-carousel-dot--active button{
   background-color: #049DB5;
   border: 2px solid #049DB5;
+}
+
+@media (max-width:320px){
+  .main-description{ bottom: 6.9%; }
+}
+
+@-moz-document url-prefix(){
+  /* MAIN CAROUSEL */
+  .main-description{
+    width: 90.5%;
+    top: 464px;
+    right: 64px;
+  }
 }
