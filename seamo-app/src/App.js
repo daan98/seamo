@@ -9,6 +9,7 @@ import Welcome from './components/Welcome';
 import Social from './components/Social';
 import { getMoviesImage } from './components/Data'
 import Movie from "./components/Movie";
+import Genre from "./components/Genre";
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="/movie" element={<Movie changeImg={changeImage} />} />
         <Route path="/search" element={<Search changeImg={changeImage} />} />
         <Route path="/setting" element={<Setting changeImg={changeImage} />} />
+        <Route path="/genre" element={<Genre changeImg={changeImage} />} />
         <Route path="/facebook" element={<Social socialMedia="facebook" />} />
         <Route path="/instagram" element={<Social socialMedia="instagram" />} />
         <Route path="/twitter" element={<Social socialMedia="twitter" />} />

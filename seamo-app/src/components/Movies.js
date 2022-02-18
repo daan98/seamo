@@ -49,7 +49,7 @@ function Movies(props){
         setInterval(() => {
             changeImg();
         }, 5000);
-    }, [changeImg])
+    }, []);
 
     return(
         <div id="main-element">

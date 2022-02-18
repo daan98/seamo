@@ -36,7 +36,7 @@ function Setting(props){
         setInterval(() => {
             changeImg();
         }, 5000);
-    }, [])
+    }, []);
 
     return(
         <div id="main-element">

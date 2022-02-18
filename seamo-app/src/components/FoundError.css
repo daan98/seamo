@@ -1,0 +1,21 @@
+.error-container{
+    position: absolute;
+    width: 100%;
+    top: 25%;
+}
+
+.error-container h1{
+    margin: auto;
+    padding: 16px 0;
+}
+
+.error-container p{
+    margin-bottom: 55px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.error-container a{
+    border-radius: 40px;
+    padding: 1% 4%;
+}

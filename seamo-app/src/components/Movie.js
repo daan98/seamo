@@ -1,6 +1,5 @@
-import './Movie.css';
 import './Carousel.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Carousel from 'react-multi-carousel';
@@ -8,7 +7,9 @@ import { getMoviesImage, info, play } from "./Data";
 import { NavLink } from 'react-router-dom';
 import EmbedVideo from './EmbedVideo';
 
-function Movie(){
+function Movie(props){
+    const { changeImg } = props;
+
     const secondaryResponsive = {
         superLarge: {
             breakpoint: { max: 4000, min: 3001 },
@@ -36,6 +37,12 @@ function Movie(){
         if(e.target.nearestViewportElement.className.animVal.includes('info')) window.open("https://www.youtube.com/c/ReneZZ")
     };
 
+    useEffect(() => {
+        setInterval(() => {
+            changeImg();
+        }, 5000);
+    }, []);
+    
     return(
         <div id='main-element'>
             <Header />

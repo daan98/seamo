@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import { getGenresImage } from './Data'
+import { NavLink } from 'react-router-dom';
 
 function Search(props){
     const { changeImg } = props;
@@ -11,7 +12,7 @@ function Search(props){
         setInterval(() => {
             changeImg();
         }, 5000);
-    }, [])
+    }, []);
 
     return(
         <div id="main-element">
@@ -23,15 +24,14 @@ function Search(props){
                         {getGenresImage.map(genre => (
                             <div key={genre.id} className="genre-info">
                                 <img src={genre.url} />
-                                <div className="synopsis">
+                                <NavLink to='/genre' className="synopsis">
                                     <p>{genre.genre}</p>
                                     <div className="show show-search"></div>
-                                </div>
+                                </NavLink>
                             </div>
                         ))}
                     </div>
                 </div>
-                {/* <section className="background"></section> */}
             </div>
             <Footer />
         </div>
