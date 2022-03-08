@@ -33,7 +33,6 @@ function Genre(props){
                                     <p className="yellow preview-info"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
                                     <NavLink id='play' to="/movie" className="yellow movie-icon">{play}</NavLink>
                                     <p id="info" className="yellow movie-icon" onClick={(e) => infoMovie(e)}>{info}</p>
-                                    {/* <div className="show show-search"></div> */}
                                 </div>
                             </div>
                         ))}

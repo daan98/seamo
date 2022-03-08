@@ -1,3 +1,15 @@
-.show-search .preview-info{
+.synopsis{ top: -204px; }
+
+.genre-info:hover .synopsis{
+    display: block;
+}
+
+.show-search .preview-info {
     padding: 0;
+    font-weight: normal;
+}
+
+#info{
+    padding: 0;
+    margin-bottom: 10px;
 }
