@@ -7,32 +7,33 @@ import Search from './components/Search';
 import Setting from './components/Setting';
 import Welcome from './components/Welcome';
 import Social from './components/Social';
-import { getMoviesImage } from './components/Data'
 import Movie from "./components/Movie";
 import Genre from "./components/Genre";
-import FetchData from "./components/FetchData";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getGenres } from "./actions/GenreActions";
+import { getMovies } from "./actions/MoviesActions";
+import { getUsers } from "./actions/UserActions";
 
 function App() {
+  const genreDispatch = useDispatch();
+  const moviesDispatch = useDispatch();
+  const userDispatch = useDispatch();
 
-  function changeImage(e) {
-    let mainElement = document.getElementById("main-element");
-    const urlImage = Math.random() * getMoviesImage.length;
-    const showImage = Math.round(urlImage);
-    
-    mainElement.style.backgroundImage = `url(${getMoviesImage[showImage].url})`;
-  }
-
+  useEffect( () =>{
+    genreDispatch(getGenres());
+    moviesDispatch(getMovies());
+    userDispatch(getUsers());
+  }, [genreDispatch, moviesDispatch, userDispatch]);
+  
   return (
     <div>
       <Routes>
-        <Route path="/movies" element={
-          // <FetchData />
-          <Movies />
-        } />
-        <Route path="/movie" element={<Movie changeImg={changeImage} />} />
-        <Route path="/search" element={<Search changeImg={changeImage} />} />
-        <Route path="/setting" element={<Setting changeImg={changeImage} />} />
-        <Route path="/genre" element={<Genre changeImg={changeImage} />} />
+        <Route path="/genre/:id" element={<Genre />} />
+        <Route path="/movie/:id" element={<Movie />} />
+        <Route path="/movies" element={ <Movies /> } />
+        <Route path="/search" element={<Search />} />
+        <Route path="/setting" element={<Setting />} />
         <Route path="/facebook" element={<Social socialMedia="facebook" />} />
         <Route path="/instagram" element={<Social socialMedia="instagram" />} />
         <Route path="/twitter" element={<Social socialMedia="twitter" />} />

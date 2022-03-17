@@ -1,41 +1,42 @@
 import './Search.css'
 import './Genre.css'
-import React, { useEffect } from "react";
+import React from "react";
 import Header from './Header';
 import Footer from './Footer';
-import { getGenresImage, play, info } from './Data';
-import { NavLink } from 'react-router-dom';
+import { play, info } from './Data';
+import { NavLink, useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 
 function Genre(props){
-    const { changeImg } = props;
+    const params = useParams();
+    const movies = useSelector(state => state.movies);
 
-    const infoMovie = (e) => {
-        if(e.target.nearestViewportElement.className.animVal.includes('info')) window.open("https://www.youtube.com/c/ReneZZ")
+    const infoMovie = (e, link, linkLang) => {
+        if(e.target.nearestViewportElement.className.animVal.includes('info')) window.open(`https://${linkLang}.wikipedia.org/wiki/${link}`)
     };
-
-    useEffect(() => {
-        setInterval(() => {
-            changeImg();
-        }, 5000);
-    }, []);
 
     return(
         <div id="main-element">
             <Header />
             <div className="background">
                 <div className="container">
-                    <h1 className="title yellow border">Action</h1>
+                    <h1 className="title yellow border">{params.id}</h1>
                     <div className="genre-container">
-                        {getGenresImage.map(genre => (
-                            <div key={genre.id} className="genre-info">
-                                <img src={genre.url} />
-                                <div className="synopsis show-search">
-                                    <p className="yellow preview-info"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
-                                    <NavLink id='play' to="/movie" className="yellow movie-icon">{play}</NavLink>
-                                    <p id="info" className="yellow movie-icon" onClick={(e) => infoMovie(e)}>{info}</p>
-                                </div>
-                            </div>
-                        ))}
+                        {movies.map(movie => {
+                            if(movie.genre.includes(params.id.toLowerCase())){
+                                const path = `/movie/${movie._id}`;
+                                return(
+                                    <div key={movie._id} className="genre-info">
+                                        <img src={movie.url} />
+                                        <div className="synopsis show-search">
+                                            <p className="yellow preview-info"><span>{movie.name} </span>{movie.bitDescription !== '-' ? movie.bitDescription : movie.description}</p>
+                                            <NavLink id='play' to={path} className="yellow movie-icon">{play}</NavLink>
+                                            <p id="info" className="yellow movie-icon" onClick={(e) => infoMovie(e, movie.wiki, movie.wikiLang)}>{info}</p>
+                                        </div>
+                                    </div>
+                                );
+                            }
+                        })}
                     </div>
                 </div>
             </div>

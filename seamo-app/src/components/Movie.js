@@ -1,14 +1,17 @@
 import './Carousel.css';
-import React, { useEffect } from 'react';
+import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Carousel from 'react-multi-carousel';
-import { getMoviesImage, info, play } from "./Data";
-import { NavLink } from 'react-router-dom';
+import { info, play } from "./Data";
+import { NavLink, useParams } from 'react-router-dom';
 import EmbedVideo from './EmbedVideo';
+import { useSelector } from 'react-redux';
 
 function Movie(props){
-    const { changeImg } = props;
+    const params = useParams();
+    const movies = useSelector(state => state.movies);
+    const result = movies.find(movie => movie._id === params.id);
 
     const secondaryResponsive = {
         superLarge: {
@@ -33,15 +36,9 @@ function Movie(props){
         }
     };
 
-    const infoMovie = (e) => {
-        if(e.target.nearestViewportElement.className.animVal.includes('info')) window.open("https://www.youtube.com/c/ReneZZ")
+    const infoMovie = (e, link, linkLang) => {
+        if(e.target.nearestViewportElement.className.animVal.includes('info')) window.open(`https://${linkLang}.wikipedia.org/wiki/${link}`)
     };
-
-    useEffect(() => {
-        setInterval(() => {
-            changeImg();
-        }, 5000);
-    }, []);
     
     return(
         <div id='main-element'>
@@ -49,23 +46,23 @@ function Movie(props){
             <div className='background'>
                 <div className='movie-container' style={{paddingBottom:'30px'}}>
                     <div className='container'>
-                    <h1 className='title yellow'>MOVIE TITLE</h1>
+                    <h1 className='title yellow'>{result.name}</h1>
                     <div className='setting-container' style={{paddingTop: 'o'}}>
                         <div>
-                            <img src={getMoviesImage[1].url} />
+                            <img src={result.url} />
                         </div>
                         <div>
                             <h3 className='yellow'>Description</h3>
-                            <p className='yellow'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dignissim, lacus vel placerat laoreet, mi arcu suscipit libero, eget tempus felis augue a arcu. In malesuada sollicitudin ullamcorper. Donec a justo a odio tristique lobortis at quis lorem. Aenean ut porta dui.</p>
+                            <p className='yellow'>{result.description}</p>
                             <h3 className='yellow'>Guest:</h3>
-                            <p className='yellow'>fulano, mendana, futano, yolo</p>
+                            <p className='yellow'>{result.guest.join(', ')}</p>
                             <h3 className='yellow'>Genre:</h3>
-                            <p className='yellow'>action, comedy</p>
+                            <p className='yellow'>{result.genre.join(', ')}</p>
                         </div>
                     </div>
 
                     <h1 className='yellow title' style={{textAlign: 'center', margin: '40px auto 15px'}}>Trailer</h1>
-                    <EmbedVideo embedId='UrIbxk7idYA' />
+                    <EmbedVideo embedId={result.trailer} />
 
                     </div>
 
@@ -79,17 +76,18 @@ function Movie(props){
                     keyBoardControl={true}
                     className="carousel-container"
                     >
-                        {getMoviesImage.map(movie => {
+                        {movies.map(movie => {
+                            const path = `/movie/${movie._id}`
                             if(movie.recent){
                                 return(
-                                    <div key={movie.id} className="carousel-item">
+                                    <div key={movie._id} className="carousel-item">
                                         <div className="image-container">
                                             <img src={movie.url} alt="TEST" />
                                         </div>
                                         <div className="movie-info-container">
-                                            <p className="yellow preview-info"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
-                                            <NavLink id='play' to="/movie" className="yellow movie-icon">{play}</NavLink>
-                                            <p id="info" className="yellow movie-icon" onClick={(e) => infoMovie(e)}>{info}</p>
+                                            <p className="yellow preview-info"><span>{movie.name} </span>{movie.bitDescription !== '-' ? movie.bitDescription : movie.description}</p>
+                                            <NavLink id='play' to={path} className="yellow movie-icon">{play}</NavLink>
+                                            <p id="info" className="yellow movie-icon" onClick={(e) => infoMovie(e, movie.wiki, movie.wikiLang)}>{info}</p>
                                         </div>
                                     </div>
                                 );

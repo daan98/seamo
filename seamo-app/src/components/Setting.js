@@ -1,14 +1,12 @@
 import './Setting.css';
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { getUserInfo } from "./Data";
 import Footer from "./Footer";
 import Header from "./Header";
+import { useSelector } from 'react-redux';
 
 function Setting(props){
-    const{ changeImg } = props;
-    
-    const { img } = getUserInfo;
+    const users = useSelector(state => state.users);
     
     const onChecked = (e) => {
         const originalInp =  document.getElementById("originalInput");
@@ -32,20 +30,17 @@ function Setting(props){
         }
     }
 
-    useEffect(() => {
-        setInterval(() => {
-            changeImg();
-        }, 5000);
-    }, []);
-
     return(
         <div id="main-element">
             <Header />
             <div className="background">
                 <div className="container setting-container">
-                    <section className="avatar">
-                        <img src={img} className="" />
-                    </section>
+                    {users.map(user => (
+                        <section key={user._id} className="avatar">
+                            <img src={user.image} className="" />
+                            <h3 className='yellow title center'>{user.name}</h3>
+                        </section>
+                    ))}
 
                     <section className="user-info">
                         <div className="account">

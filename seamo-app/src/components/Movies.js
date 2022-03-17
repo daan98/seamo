@@ -5,11 +5,12 @@ import React, { useEffect } from "react";
 import Carousel from 'react-multi-carousel';
 import Footer from "./Footer";
 import Header from "./Header";
-import { getMoviesImage, info, play } from "./Data";
+import { info, play } from "./Data";
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function Movies(props){
-    const { changeImg } = props
+    const movies = useSelector(state => state.movies);
     
     const mainResponsive = {
         uniqueSize: {
@@ -41,15 +42,11 @@ function Movies(props){
         }
     };
 
-    const infoMovie = (e) => {
-        if(e.target.nearestViewportElement.className.animVal.includes('info')) window.open("https://www.youtube.com/c/ReneZZ")
+    const infoMovie = (e, link, linkLang) => {
+        if(e.target.nearestViewportElement.className.animVal.includes('info')) window.open(`https://${linkLang}.wikipedia.org/wiki/${link}`)
     };
-    
-    useEffect(() => {
-        setInterval(() => {
-            changeImg();
-        }, 5000);
-    }, []);
+
+    console.log(movies);
 
     return(
         <div id="main-element">
@@ -68,15 +65,15 @@ function Movies(props){
                     pauseOnHover={true}
                     keyBoardControl={true}
                     >
-                        {getMoviesImage.map(movie => {
+                        {movies.map(movie => {
                             if(movie.recent){
                                 return(
-                                    <div key={movie.id} className="main-carousel-item">
+                                    <div key={movie._id} className="main-carousel-item">
                                         <div className="image-container">
-                                            <img src={movie.url} alt="TEST" />
+                                            <img src={movie.url} alt="movie Image" />
                                         </div>
                                         <div className='main-description'>
-                                            <p className="yellow"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo ligula, dapibus a iaculis sit amet, rutrum et tellus. Nullam sed odio vestibulum, scelerisque tellus mollis, consequat mi. Nullam eget blandit sem, nec porttitor urna. Etiam mattis lorem ut dolor ornare, ut consectetur justo volutpat. Phasellus vitae imperdiet turpis.</p>
+                                            <p className="yellow"><span>{movie.name}: </span>{movie.description}</p>
                                         </div>
                                     </div>
                                 );
@@ -96,17 +93,18 @@ function Movies(props){
                     keyBoardControl={true}
                     className="carousel-container"
                     >
-                        {getMoviesImage.map(movie => {
+                        {movies.map(movie => {
                             if(movie.recent){
+                                const path = `/movie/${movie._id}`;
                                 return(
-                                    <div key={movie.id} className="carousel-item">
+                                    <div key={movie._id} className="carousel-item">
                                         <div className="image-container">
-                                            <img src={movie.url} alt="TEST" />
+                                            <img src={movie.url} alt="movie image" />
                                         </div>
                                         <div className="movie-info-container">
-                                            <p className="yellow preview-info"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
-                                            <NavLink id='play' to="/movie" className="yellow movie-icon">{play}</NavLink>
-                                            <p id="info" className="yellow movie-icon" onClick={(e) => infoMovie(e)}>{info}</p>
+                                            <p className="yellow preview-info"><span>{movie.name}: </span>{movie.bitDescription !== '-' ? movie.bitDescription : movie.description}</p>
+                                            <NavLink id='play' to={path} className="yellow movie-icon" >{play}</NavLink>
+                                            <p id="info" className="yellow movie-icon" onClick={(e) => infoMovie(e, movie.wiki, movie.wikiLang)}>{info}</p>
                                         </div>
                                     </div>
                                 );
@@ -126,17 +124,18 @@ function Movies(props){
                     keyBoardControl={true}
                     className="carousel-container"
                     >
-                        {getMoviesImage.map(movie => {
+                        {movies.map(movie => {
                             if(movie.recent){
+                                const path = `/movie/${movie._id}`;
                                 return(
-                                    <div key={movie.id} className="carousel-item">
+                                    <div key={movie._id} className="carousel-item">
                                         <div className="image-container">
-                                            <img src={movie.url} alt="TEST" />
+                                            <img src={movie.url} alt="movie image" />
                                         </div>
                                         <div className="movie-info-container">
-                                            <p className="yellow preview-info"><span>John Wick: </span>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
-                                            <NavLink id='play' to="/movie" className="yellow movie-icon">{play}</NavLink>
-                                            <p id="info" className="yellow movie-icon" onClick={(e) => infoMovie(e)}>{info}</p>
+                                            <p className="yellow preview-info"><span>{movie.name}: </span>{movie.bitDescription !== '-' ? movie.bitDescription : movie.description}</p>
+                                            <NavLink id='play' to={path} className="yellow movie-icon" >{play}</NavLink>
+                                            <p id="info" className="yellow movie-icon" onClick={(e) => infoMovie(e, movie.wiki)}>{info}</p>
                                         </div>
                                     </div>
                                 );
