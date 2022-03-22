@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const genresUrl = 'http://localhost:3001/genre';
-const moviesUrl = 'http://localhost:3001/movie'
+const genresUrl = 'https://seamo-server.herokuapp.com/genre';
+const moviesUrl = 'https://seamo-server.herokuapp.com/movie'
 // const singleMovieUrl = `http://localhost:3001/movie/${id}`;
-const usersUrl = 'http://localhost:3001/user';
+const usersUrl = 'https://seamo-server.herokuapp.com/user';
 // const singleUserUrl = `http://localhost:3001/user/${id}`;
 
 export const GetGenres = () => axios.get(genresUrl);

@@ -46,8 +46,6 @@ function Movies(props){
         if(e.target.nearestViewportElement.className.animVal.includes('info')) window.open(`https://${linkLang}.wikipedia.org/wiki/${link}`)
     };
 
-    console.log(movies);
-
     return(
         <div id="main-element">
             <Header />
