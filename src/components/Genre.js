@@ -27,7 +27,7 @@ function Genre(props){
                                 const path = `/movie/${movie._id}`;
                                 return(
                                     <div key={movie._id} className="genre-info">
-                                        <img src={movie.url} />
+                                        <img src={movie.url} alt={movie.name} />
                                         <div className="synopsis show-search">
                                             <p className="yellow preview-info"><span>{movie.name} </span>{movie.bitDescription !== '-' ? movie.bitDescription : movie.description}</p>
                                             <NavLink id='play' to={path} className="yellow movie-icon">{play}</NavLink>
@@ -35,7 +35,7 @@ function Genre(props){
                                         </div>
                                     </div>
                                 );
-                            }
+                            } else{ return( true )}
                         })}
                     </div>
                 </div>

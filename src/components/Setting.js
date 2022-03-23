@@ -37,7 +37,7 @@ function Setting(props){
                 <div className="container setting-container">
                     {users.map(user => (
                         <section key={user._id} className="avatar">
-                            <img src={user.image} className="" />
+                            <img src={user.image} alt={user.name} />
                             <h3 className='yellow title center'>{user.name}</h3>
                         </section>
                     ))}

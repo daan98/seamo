@@ -49,7 +49,7 @@ function Movie(props){
                     <h1 className='title yellow'>{result.name}</h1>
                     <div className='setting-container' style={{paddingTop: 'o'}}>
                         <div>
-                            <img src={result.url} />
+                            <img src={result.url} alt={result.name} />
                         </div>
                         <div>
                             <h3 className='yellow'>Description</h3>
@@ -82,7 +82,7 @@ function Movie(props){
                                 return(
                                     <div key={movie._id} className="carousel-item">
                                         <div className="image-container">
-                                            <img src={movie.url} alt="TEST" />
+                                            <img src={movie.url} alt={movie.name} />
                                         </div>
                                         <div className="movie-info-container">
                                             <p className="yellow preview-info"><span>{movie.name} </span>{movie.bitDescription !== '-' ? movie.bitDescription : movie.description}</p>
