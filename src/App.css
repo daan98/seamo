@@ -30,10 +30,7 @@ a{ text-decoration: none; }
   background-position: center;
 }
 
-.background{
-  background-color: rgba(89, 1, 120, .8);
-  min-height: 100vh;
-}
+.background{ min-height: 100vh; }
 
 .container {
   padding-top: 74px;
@@ -75,17 +72,14 @@ nav{
 }
 
 .btn:hover{
-  color: #000000;
-  background-color: #049DB5;
-  border: 2px solid #000000;
+  border: 2px solid;
   transition: all ease-in-out .4s;
 }
 
 /* FOOTER */
 footer{
   padding: 20px 0;
-  background-color: #590178;
-  border-top: 4px solid #FFEE00;
+  border-top: 4px solid;
 }
 
 footer a{
@@ -100,7 +94,6 @@ footer a:first-of-type{ margin-left: 0; }
 footer a:last-of-type{ margin-right: 0; }
 
 footer a:hover {
-  color: #049DB5;
   transition: all ease-in-out .4s;
 }
 

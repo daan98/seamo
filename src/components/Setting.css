@@ -13,7 +13,7 @@
 
 .avatar img{ 
   border-radius: 50%;
-  border: 4px solid #FFEE00;
+  border: 4px solid;
 }
 
 .user-info{ width: 100%; }
@@ -35,12 +35,12 @@
   background-color: #FFFFFF;
 }
 
-.theme input[type="radio"]:checked + *::before{ background: #049DB5; }
+.theme input[type="radio"]:checked + *::before{ background: #ff5e00; }
 
 .account h1, .payment h1{ margin-bottom: 40px; }
 
 .account a, .payment a{
-  border: 3px solid #FFEE00;
+  border: 3px solid;
   border-radius: 40px;
   padding: 1% 3%;
   margin: 0 10px;
@@ -50,12 +50,7 @@
 
 .payment a:last-of-type{ margin-right: 0; }
 
-.account a:hover, .payment a:hover{
-  border-color: #000000;
-  background-color: #049DB5;
-  color: #000000;
-  transition: all ease-in-out .4s;
-}
+.account a:hover, .payment a:hover{ transition: all ease-in-out .4s; }
 
 @media (max-width:767px){
   .setting-container{

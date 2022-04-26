@@ -11,7 +11,7 @@
   margin: auto;
   width: fit-content;
   height: fit-content;
-  border: 3px solid #FFEE00;
+  border: 3px solid;
   border-radius: 40px;
   padding: 1% 4%;
   font-size: 32px;
@@ -19,8 +19,6 @@
 }
 
 .initial-btn:hover{
-  color: #000000;
-  background-color: #049DB5;
-  border: 3px solid #049DB5;
+  border: 3px solid;
   transition: all ease-in-out .4s;
 }

@@ -21,7 +21,7 @@
 
 .carousel-container .react-multiple-carousel__arrow::before{ font-size: 30px;}
 
-.carousel-container .react-multiple-carousel__arrow:hover::before { color: #049DB5; }
+.carousel-container .react-multiple-carousel__arrow:hover::before { color: #049DB5; } /* HERE!! */
 
 .carousel-container .react-multiple-carousel__arrow--left { left: -14px; }
 
@@ -33,7 +33,6 @@
   top: 0px;
   width: calc(100% - 20%);
   height: 100%;
-  background-color: rgba(89, 1, 120, .8);
 }
 
 .carousel-item:hover .movie-info-container{ display: block; }
@@ -47,7 +46,7 @@
 }
 
 .movie-icon svg:hover{
-  color: #049DB5;
+  color: #049DB5; /* HERE!! */
   cursor: pointer;
   transition: all ease-in-out .4s;
 }
@@ -55,8 +54,6 @@
 .movie-icon svg:nth-child(1){ margin-right: 10px; }
 
 #info{ margin-right: 52px; }
-
-/* .carousel-item .movie-info-container p{ margin: 0; } */
 
 .carousel-container .react-multi-carousel-dot-list{ justify-content: end; }
 
