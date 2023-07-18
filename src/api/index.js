@@ -1,9 +1,9 @@
-import axios from 'axios';
+import axios from "axios";
 
-const genresUrl = 'https://seamo-server.herokuapp.com/genre';
-const moviesUrl = 'https://seamo-server.herokuapp.com/movie'
+const genresUrl = `${process.env.REACT_APP_BACKEND_URL}/genre`;
+const moviesUrl = `${process.env.REACT_APP_BACKEND_URL}/movie`;
 // const singleMovieUrl = `http://localhost:3001/movie/${id}`;
-const usersUrl = 'https://seamo-server.herokuapp.com/user';
+const usersUrl = `${process.env.REACT_APP_BACKEND_URL}/user`;
 // const singleUserUrl = `http://localhost:3001/user/${id}`;
 
 export const GetGenres = () => axios.get(genresUrl);
