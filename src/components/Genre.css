@@ -2,6 +2,8 @@
 
 .genre-info:hover .synopsis{
     display: block;
+    transform: translateY(0);
+    transition: all ease-in-out .6s;
 }
 
 .show-search .preview-info {

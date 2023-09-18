@@ -15,12 +15,13 @@
   text-align: center;
   top: -204px;
   height: 100%;
-  transition: all ease-in-out 1s;
+  transition: all ease-in-out 0.6s;
 }
 
 .genre-info:hover .synopsis{
   display: grid;
-  transition: all ease-in-out 1s;
+  transition: all ease-in-out 0.6s;
+  transform: translateY(100%);
 }
 
 .genre-info p{
