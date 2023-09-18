@@ -2,7 +2,6 @@
 .carousel-container{
   width: 90%;
   margin:  0 auto;
-  padding-bottom: 40px;
 }
 
 .carousel-container .react-multi-carousel-item{ text-align: center; }
@@ -28,15 +27,21 @@
 .carousel-container .react-multiple-carousel__arrow--right { right: -14px; }
 
 .carousel-item .movie-info-container{
-  display: none;
+  /* display: none; */
   position: absolute;
   top: 0px;
   width: calc(100% - 20%);
   height: 100%;
   background-color: rgba(89, 1, 120, .8);
+  transform: translateY(100%);
+  transition: all ease-in-out .6s;
 }
 
-.carousel-item:hover .movie-info-container{ display: block; }
+.carousel-item:hover .movie-info-container{
+  /* display: block; */
+  transform: translateY(0%);
+  transition: all ease-in-out .6s;
+}
 
 .movie-icon{
   position: absolute;

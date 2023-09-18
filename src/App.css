@@ -1,5 +1,5 @@
 /** GLOBALS **/
-@import url(https://allfont.net/allfont.css?fonts=agency-fb-bold);
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&family=Syncopate:wght@400;700&display=swap');
 
 img{
   width: 100%;
@@ -10,7 +10,7 @@ h1{ width: fit-content; }
 
 a{ text-decoration: none; }
 
-.title{ font-family: 'Agency FB Bold', arial; }
+.title{ font-family: 'Syncopate', sans-serif; }
 
 .purple{ color: #590178; }
 
@@ -44,11 +44,15 @@ a{ text-decoration: none; }
 
 .image-container{ height: 100%; }
 
+.preview-info { padding: 0 5px; }
+
 .preview-info span {
   display: block;
   font-weight: bold;
   margin: 10px 0;
 }
+
+.carousel-title { padding-top: 40px; }
 
 /* HEADER */
 nav{
@@ -68,9 +72,10 @@ nav{
   border: 2px solid;
   padding: 20px 0;
   width: 100%;
-  font-family: 'Agency FB Bold', arial;
+  font-family: 'Syncopate', sans-serif;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 24px;
+  font-weight: 700;
   transition: all ease-in-out .4s;
 }
 
@@ -78,6 +83,7 @@ nav{
   color: #000000;
   background-color: #049DB5;
   border: 2px solid #000000;
+  font-weight: 700;
   transition: all ease-in-out .4s;
 }
 
@@ -107,4 +113,10 @@ footer a:hover {
 footer p{
   font-size: 10px;
   font-weight: bold;
+}
+
+@media (max-width: 760px) {/* Fix font size for mobile screen */
+  .btn {
+    font-size: 16px;
+  }
 }
