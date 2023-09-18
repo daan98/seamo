@@ -2,6 +2,7 @@
 .carousel-container{
   width: 90%;
   margin:  0 auto;
+  padding-bottom: 20px;
 }
 
 .carousel-container .react-multi-carousel-item{ text-align: center; }
@@ -33,7 +34,7 @@
   width: calc(100% - 20%);
   height: 100%;
   background-color: rgba(89, 1, 120, .8);
-  transform: translateY(100%);
+  transform: translateY(calc(100% + 20px));
   transition: all ease-in-out .6s;
 }
 

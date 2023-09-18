@@ -115,6 +115,7 @@ function Movies(props) {
                         id="play"
                         to={path}
                         className="yellow movie-icon"
+                        onClick={(e) => window.scrollTo(0, 0)}
                       >
                         {play}
                       </NavLink>
@@ -167,6 +168,7 @@ function Movies(props) {
                         id="play"
                         to={path}
                         className="yellow movie-icon"
+                        onClick={(e) => window.scrollTo(0, 0)}
                       >
                         {play}
                       </NavLink>
